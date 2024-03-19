@@ -1,11 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
 import stripe from "stripe";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 
+
+app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 
