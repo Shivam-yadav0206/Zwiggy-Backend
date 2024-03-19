@@ -11,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
+const PORT = process.env.PORT || 7000;
+
 
 app.get("/", (req, res) => {
   res.send("Welcome");
@@ -53,6 +55,6 @@ app.post("/stripe-checkout", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("listening on port", 5000);
+app.listen(PORT, () => {
+  console.log("listening on port", PORT);
 });
